@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cara Mendapatkan Alamat IP Pengguna</title>
+  </head>
+  <body>
+    <h1>Alamat IP Anda adalah:</h1>
+    <p id="ip"></p>
+
+    <script>
+      // Menggunakan API ipify untuk mendapatkan alamat IP pengguna
+      fetch("https://api.ipify.org?format=json")
+        .then((response) => response.json())
+        .then((data) => {
+          document.getElementById("ip").textContent = data.ip;
+        })
+        .catch((error) => {
+          console.error("Gagal mendapatkan IP:", error);
+        });
+    </script>
+  </body>
+</html>
