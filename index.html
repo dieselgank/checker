@@ -1,34 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Deteksi Tipe Perangkat</title>
+    <title>Deteksi Resolusi Layar Pengguna</title>
 </head>
 <body>
-    <h1>Tipe Perangkat Anda adalah:</h1>
-    <p id="device"></p>
+    <h1>Resolusi Layar Anda adalah:</h1>
+    <p id="resolution"></p>
 
     <script>
-        // Fungsi untuk mendeteksi tipe perangkat
-        function detectDevice() {
-            var userAgent = navigator.userAgent;
+        // Mendapatkan resolusi layar pengguna
+        var screenWidth = window.screen.width;
+        var screenHeight = window.screen.height;
 
-            if (/android/i.test(userAgent)) {
-                return "Android";
-            } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
-                return "iOS";
-            } else if (/Windows/i.test(userAgent)) {
-                return "Windows";
-            } else if (/Macintosh/i.test(userAgent)) {
-                return "MacOS";
-            } else if (/Linux/i.test(userAgent)) {
-                return "Linux";
-            } else {
-                return "Perangkat tidak diketahui";
-            }
-        }
-
-        // Menampilkan tipe perangkat di halaman
-        document.getElementById('device').textContent = detectDevice();
+        // Menampilkan resolusi layar di halaman
+        document.getElementById('resolution').textContent = screenWidth + " x " + screenHeight + " piksel";
     </script>
 </body>
 </html>
